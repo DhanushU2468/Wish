@@ -1,162 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Varsha 鉂わ笍</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Poppins,sans-serif;
-background:linear-gradient(135deg,#220817,#4a1430,#1b0714);
-color:#fff;overflow-x:hidden;
-}
-#stars,.hearts{position:fixed;inset:0;pointer-events:none}
-.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;animation:twinkle 2.5s infinite}
-@keyframes twinkle{50%{opacity:.2}}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
-h1{font-family:"Dancing Script";font-size:5rem;color:#ffd6e0}
-.hero p{max-width:700px}
-.music{margin-top:20px;padding:12px 24px;border:none;border-radius:30px;background:#ff4f8b;color:#fff;cursor:pointer}
-.section{max-width:1100px;margin:auto;padding:80px 20px}
-h2{font-family:"Playfair Display";text-align:center;margin-bottom:40px;color:#ffd6e0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:rgba(255,255,255,.08);padding:22px;border-radius:18px;backdrop-filter:blur(8px)}
-.card:hover{transform:translateY(-5px)}
-.rosewrap{text-align:center;padding:80px 20px}
-.rose{font-size:120px;cursor:pointer;transition:.6s}
-.rose:hover{transform:scale(1.1) rotate(10deg)}
-.letter{max-width:800px;margin:30px auto;background:rgba(255,255,255,.08);padding:30px;border-radius:20px;display:none;line-height:1.8}
-.final{text-align:center;padding:80px 20px}
-.final h3{font-family:"Dancing Script";font-size:4rem;color:#ffd6e0;animation:pulse 2s infinite}
-@keyframes pulse{50%{transform:scale(1.08)}}
-.quote{margin:15px auto;max-width:700px;background:rgba(255,255,255,.07);padding:20px;border-radius:16px}
-.heart{position:fixed;font-size:24px;animation:float 6s linear forwards}
-@keyframes float{from{transform:translateY(100vh)}to{transform:translateY(-120px);opacity:0}}
-footer{text-align:center;padding:30px;color:#ccc}
-</style>
+<title>For Varsha ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<video autoplay muted loop id="bgVideo">
+    <source src="stars.mp4" type="video/mp4">
+</video>
 
 <div id="stars"></div>
 
 <audio id="bgMusic" loop>
-<source src="perfect.mp3" type="audio/mpeg">
+    <source src="perfect.mp3" type="audio/mpeg">
 </audio>
 
 <section class="hero">
-<h1>Varsha 鉂わ笍</h1>
-<p>Every heartbeat, every smile, every beautiful memory reminds me how lucky I am to know you.</p>
-<button class="music" onclick="toggleMusic()">馃幍 Play Perfect</button>
-<p style="margin-top:20px">With Love,<br><b>Karthik</b></p>
+
+    <h1>Varsha ❤️</h1>
+
+    <p>
+        Every heartbeat, every smile, every beautiful memory reminds me how lucky I am to know you.
+    </p>
+
+    <button onclick="toggleMusic()">
+        🎵 Play Music
+    </button>
+
+    <p class="from">
+        With Love,<br>
+        <b>Karthik</b>
+    </p>
+
 </section>
 
 <section class="section">
-<h2>Why I Love You</h2>
-<div class="grid">
-<div class="card">馃尮 Your smile brightens even the darkest day.</div>
-<div class="card">鉁� Your kindness makes everyone feel special.</div>
-<div class="card">馃挅 Your presence turns ordinary moments into memories.</div>
-<div class="card">馃寵 Talking to you is my favorite part of the day.</div>
-</div>
+
+    <h2>Why I Love You ❤️</h2>
+
+    <div class="grid">
+
+        <div class="card">🌹 Your smile brightens every day.</div>
+
+        <div class="card">✨ Your kindness makes everything beautiful.</div>
+
+        <div class="card">💖 Your presence makes life special.</div>
+
+        <div class="card">💫 Talking to you is my favorite moment.</div>
+
+    </div>
+
+</section>
+
+<section class="section parallax">
+
+    <h2>Our Beautiful Memories 💞</h2>
+
+    <div class="grid">
+
+        <div class="card">✨ First conversation.</div>
+
+        <div class="card">💫 Endless late-night talks.</div>
+
+        <div class="card">🌟 Special little moments.</div>
+
+        <div class="card">❤️ Every memory with you.</div>
+
+    </div>
+
 </section>
 
 <section class="section">
-<h2>Our Beautiful Memories</h2>
-<div class="grid">
-<div class="card">鉁� The first conversation that started everything.</div>
-<div class="card">馃寵 Those late-night talks that felt endless.</div>
-<div class="card">鈽� The little moments that became unforgettable.</div>
-<div class="card">馃拰 Every memory feels special because of you.</div>
-</div>
+
+    <h2>Love Meter 💘</h2>
+
+    <div class="meter">
+        <div class="fill"></div>
+    </div>
+
+    <p id="loveText">0%</p>
+
 </section>
 
-<section class="section">
-<h2>Little Things I Love About You</h2>
-<div class="quote">"Your smile has a way of making everything feel okay."</div>
-<div class="quote">"You make ordinary moments unforgettable."</div>
-<div class="quote">"The best part of my day is talking to you."</div>
-<div class="quote">"You're my favorite notification."</div>
-</section>
+<div class="rose-wrap">
 
-<div class="rosewrap">
-<h2>One Last Surprise</h2>
-<div class="rose" onclick="openLetter()">馃尮</div>
-<p>Click the rose</p>
+    <h2>One Last Surprise 🌹</h2>
 
-<div id="letter" class="letter"></div>
+    <div class="rose" onclick="openLetter()">
+        🌹
+    </div>
+
+    <p>Click the Rose</p>
+
+    <div id="letter" class="letter"></div>
+
 </div>
 
 <section class="final">
-<h3>I Love You, Varsha 鉂わ笍</h3>
-<p>Forever Yours, Karthik</p>
+
+    <h3>I Love You Varsha ❤️</h3>
+
+    <p>Forever Yours, Karthik</p>
+
 </section>
 
-<footer>Made with 鉂わ笍 for Varsha</footer>
+<script src="script.js"></script>
 
-<script>
-for(let i=0;i<150;i++){
- let s=document.createElement('div');
- s.className='star';
- s.style.left=Math.random()*100+'vw';
- s.style.top=Math.random()*100+'vh';
- s.style.animationDelay=Math.random()*3+'s';
- document.getElementById('stars').appendChild(s);
-}
-
-function toggleMusic(){
- const m=document.getElementById('bgMusic');
- if(m.paused)m.play(); else m.pause();
-}
-
-setInterval(()=>{
- let h=document.createElement('div');
- h.className='heart';
- h.innerHTML='馃挅';
- h.style.left=Math.random()*100+'vw';
- document.body.appendChild(h);
- setTimeout(()=>h.remove(),6000);
-},700);
-
-const msg=`Varsha,
-
-In a world full of people, somehow my heart found its way to you.
-
-Every conversation with you becomes a memory.
-Every smile of yours brightens my day.
-Every moment with you feels special.
-
-Thank you for being kind, beautiful, caring and unforgettable.
-
-No matter where life takes us, you will always have a special place in my heart.
-
-Forever Yours,
-Karthik 鉂わ笍`;
-
-let started=false;
-function openLetter(){
- if(started) return;
- started=true;
- let box=document.getElementById('letter');
- box.style.display='block';
- let i=0;
- let timer=setInterval(()=>{
-   box.innerHTML += msg[i]=="\n" ? "<br>" : msg[i];
-   i++;
-   if(i>=msg.length) clearInterval(timer);
- },35);
-
- for(let j=0;j<25;j++){
-   let b=document.createElement('div');
-   b.className='heart';
-   b.innerHTML='鉂わ笍';
-   b.style.left='50vw';
-   document.body.appendChild(b);
-   setTimeout(()=>b.remove(),5000);
- }
-}
-</script>
 </body>
 </html>
